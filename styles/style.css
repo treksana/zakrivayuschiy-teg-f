@@ -14,11 +14,11 @@
 
 */
 
-/*@supports (font-variation-settings: normal) {
+@supports (font-variation-settings: normal) {
   .page {
       font-family: var(--main-font), sans-serif;
   }
-}*/
+}
 
 .page {
   margin: 0 auto;
@@ -475,7 +475,7 @@ footer {
   color: var(--button-color);
   font-size: 14px;
   line-height: 21px;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 
 .dialog-container .button__text {
