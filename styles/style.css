@@ -46,9 +46,6 @@
   justify-content: center;
   align-self: center;
   margin-top: 100px;
-  margin-bottom: 100px;
-  /*margin: 100px, 370px;
-  padding: 136px 120.5px 25px 120.5px;*/
   max-block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
   border: 2px solid var(--text-color);
   background-color: var(--bg-color);
@@ -58,17 +55,7 @@
   padding: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem) clamp(0.875rem, -1.469rem + 10vw, 7.531rem) 25px clamp(0.875rem, -1.469rem + 10vw, 7.531rem);
 }
 
-/*.header-logo {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 20px;
-}*/
-
 .header-logo-title {
-  /*font-size: 65px;*/
   font-size: var(--font-size-logo-title);
 }
 
