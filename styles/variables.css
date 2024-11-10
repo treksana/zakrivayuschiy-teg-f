@@ -1,1 +1,53 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font: "Inter-Variable";
+    --accent-font: "Predd Start 2P";
+    --accent-font-text-weight: 400;
+    --accent-font-title-weight: 700;
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+    --text-label-color: rgb(255, 255, 255);
+    --button-active-color:  rgba(0, 0, 0, 0.6);
+    --button-color: #fff;
+    --heart-contour-color: #000;
+    --heart-sparks-color: red;
+
+    --background-image: repeating-linear-gradient(
+        to right,
+        #d3d3d3,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+    
+    repeating-linear-gradient(
+        to bottom,
+        #d3d3d3,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+
+    linear-gradient(
+        to bottom,
+        #e7e7e7 0.01%,
+        #e7e7e7 50%,
+        #1a1a1a 100%
+    );
+
+    --font-size-logo-title: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+    --font-size-logo-text: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+/*@media (width > 768px) {
+    .header-logo-title {
+        --font-size-logo-title: clamp(3.0625rem, 2.6339rem + 0.8929vw, 4.0625rem);
+    }
+    .header-logo-text {
+      --font-size-logo-text: clamp(0.875rem, 0.6339rem + 0.5022vw, 1.4375rem);
+    }
+  }*/
+
+/*@media (prefers-color-scheme: dark) {
+    --accent-font-text-weight: 485;
+    --accent-font-title-weight: 785;}
+*/
