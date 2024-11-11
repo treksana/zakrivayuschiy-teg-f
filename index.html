@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="light dark">
     <link rel="icon" href="./images/favicon.ico" sizes="any">
     <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./images/mobile-icon.png">
@@ -18,8 +18,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="header-logo-title">&lt;/HTML&gt;</h1>
-      <p class="header-logo-text">Закрывающий тег</p>
+      <a class="header-logo-title">&lt;/HTML&gt;</a>
+      <h1 class="header-logo-text">Закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -58,7 +58,7 @@
           <p class="card-content-text">Место для ваших воспоминаний о начале обучения.</p>
         </div>
         <div class="buttons">
-          <button class="card__icon-button">
+          <button class="card__icon-button" type="button">
             <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -68,7 +68,7 @@
               <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-sparks-color)"/>
           </svg>       
           </button>
-          <button class="card__like-button text-button">
+          <button class="card__like-button text-button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -255,26 +255,26 @@
           </button>
         </div>
       </article>
-    </main>
-    <footer>
-      <button class="save-button text-button" type="button"  onclick="window['dialog-id'].showModal()" aria-controls="dialog-id">
-        <svg class="floppy" viewBox="0 0 40 40" >
-          <use href="./svg/floppy.svg#floppy"></use>
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
-      <dialog class="dialog" id="dialog-id" aria-label="Уведомление о том, что надо вставить дискету">
-        <div class="dialog-container">
-          <svg class="dialog-floppy" viewBox="0 0 40 40" width="40" height="40">
+      <div class="button-container">
+        <button class="save-button text-button" type="button"  onclick="window['dialog-id'].showModal()" aria-controls="dialog-id">
+          <svg class="floppy" viewBox="0 0 40 40" >
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
-          <span class="button__text">Вставьте дискету, чтобы продолжить</span>
-        </div>
-        <button class="text-button dialog-save-button" type="submit">
-          <span class="button__text">ОК</span>
+          <span class="button__text">Сохранить на память</span>
         </button>
-      </dialog>
-    </footer>
+        <dialog class="dialog" id="dialog-id" aria-label="Уведомление о том, что надо вставить дискету">
+          <div class="dialog-container">
+            <svg class="dialog-floppy" viewBox="0 0 40 40" width="40" height="40">
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>
+            <p class="button__text">Вставьте дискету, чтобы продолжить</p>
+          </div>
+          <button type="submit" class="text-button dialog-save-button" onclick="window['dialog-id'].close()">
+            <span class="button__text">ОК</span>
+          </button>
+        </dialog>
+      </div>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

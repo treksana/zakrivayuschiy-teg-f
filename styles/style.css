@@ -25,8 +25,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-weight: var(--accent-font-title-weigh);
-  /*font-feature-settings: 'wght' var(--main-font);*/
+  font-variation-settings: 'wght' var(--accent-font-text-weight);
   background-color: var(--bg-color);
   color: var(--text-color);
   background-repeat: no-repeat;
@@ -49,9 +48,9 @@
   max-block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
   border: 2px solid var(--text-color);
   background-color: var(--bg-color);
-  
+  margin-bottom: 102px;
   text-transform: uppercase;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   padding: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem) clamp(0.875rem, -1.469rem + 10vw, 7.531rem) 25px clamp(0.875rem, -1.469rem + 10vw, 7.531rem);
 }
 
@@ -97,7 +96,7 @@
 .theme-menu__button::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 26px;
   height: 2px;
   display: block;
@@ -109,7 +108,9 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  transform: scaleX(1);
+  transform: scaleX(0.64);
+  outline: none;
+  overflow: hidden;
 }
 
 .theme-menu__button:focus {
@@ -143,19 +144,20 @@
 .card {
   background-color: var(--bg-color);
   border: 2px solid var(--text-color);
-  margin-bottom: 52px;
+  margin-bottom: 54px;
 }
 
 .card-title {
   font-size: 18px;
-  font-weight: var(--accent-font-title-weight);
+  font-variation-settings: 'wght' var(--accent-font-title-weight);
   padding: 4px 10px 6px 10px;
-
+  border-bottom: 2px solid var(--text-color);
 }
 
 .card-content {
   padding: 29px 28.5px 0px 25px;
   font-size: 18px;
+  border-top: 2px solid var(--text-color);
 }
 
 @media (width < 768px) {
@@ -163,7 +165,7 @@
     padding: 25px 28.5px 0px 25px;
   }
   .card {
-    margin-bottom: 48px;
+    margin-bottom: 51px;
   }
 }
 
@@ -211,14 +213,21 @@
 
 .label {
   position: absolute;
-  top: 26px;
+  top: 24px;
   right: 24px;
   font-size: 14px;
   color: var(--text-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow: 0px 0px 2px var(--text-label-color), 0px 0px 4px var(--text-label-color), 0px 0px 6px var(--text-label-color), 0px 0px 8px var(--text-label-color);
+}
+
+@media (width < 768px) {
+  .label {
+    top: 22px;
+    right: 13px;
+  }
 }
 
 @supports((text-stroke: 1px var(--text-label-color)) or (-webkit-text-stroke: 1px var(--text-label-color))) {
@@ -239,9 +248,17 @@
   color: var(--text-color);
 }
 
+
+@media (width < 768px) {
+  .buttons {
+    margin-top: 23px;
+    margin-bottom: 21px;
+  }
+}
+
 .text-button {
   font-size: 14px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   line-height: 120%;
   color: var(--button-color);
   position: relative;
@@ -267,6 +284,7 @@
 .card__icon-button {
   background-color: transparent;
   padding: 0px;
+  max-height: 38px;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
   cursor: pointer;
@@ -281,25 +299,34 @@
   border-color: var(--text-color);
 }
 
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
 
-.card__icon-button:hover .core {
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
   fill: var(--heart-contour-color);
   transition: fill 0.3s linear;
 }
 
-.card__icon-button:hover .main-body {
+.like-icon:hover .main-body {
   fill: var(--heart-contour-color);
   transition: fill 0.3s linear;
   transition-delay: 0.05s;
 }
 
-.card__icon-button:not(:hover) .main-body {
-  fill: none;
+.like-icon:not(:hover) .main-body {
+  fill: transparent;
   transition: fill 0.3s linear;
 }
 
-.card__icon-button:not(:hover) .core {
-  fill: none;
+.like-icon:not(:hover) .core {
+  fill: transparent;
   transition: fill 0.3s linear 0.03s;
 }
 
@@ -315,6 +342,10 @@
 
 .sparks {
   opacity: 0;
+}
+
+.like-icon {
+  margin: auto;
 }
 
 .like-icon.is-liked .core {
@@ -375,7 +406,7 @@
 }
 
 
-footer {
+.button-container {
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -440,13 +471,25 @@ footer {
   display: grid;
   background-color: var(--bg-color);
   border: 2px solid var(--text-color);
-  max-inline-size: 340px;
+  max-inline-size: 357px;
   padding: 31px 32px 31px 31px;
   position: fixed;
   inset: 0;
   transition: opacity 0.3s ease-in-out;
   left: 0;
-  bottom: 150px;
+  bottom: 0px;
+
+}
+
+@media (width < 768px) {
+  .dialog {
+    max-inline-size: 341px;
+    padding: 30px 40px 30px 40px;
+  }
+
+  .dialog-save-button {
+    max-inline-size: 257px;
+  }
 }
 
 .dialog:not([open]) {
@@ -464,11 +507,12 @@ footer {
   justify-content: space-between;
   margin: 0 0 31px 0;
   gap: 21px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
 }
 
 .dialog-save-button {
   background-color: var(--bg-color);
+  max-inline-size: 293px;
 }
 
 .dialog .button__text {

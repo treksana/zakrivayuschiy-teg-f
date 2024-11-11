@@ -2,8 +2,11 @@
 :root {
     --main-font: "Inter-Variable";
     --accent-font: "Predd Start 2P";
-    --accent-font-text-weight: 400;
-    --accent-font-title-weight: 700;
+    --accent-font-text-weight-light: 400;
+    --accent-font-title-weight-light: 700;
+    --accent-font-text-weight-dark: 465;
+    --accent-font-title-weight-dark: 765;
+    --bg-color: #FFFFFF;
     --bg-color: #FFFFFF;
     --text-color: #000000;
     --text-label-color: rgb(255, 255, 255);
