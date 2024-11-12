@@ -127,15 +127,6 @@
   animation: moveArrow 0.5s ease-in-out infinite alternate;
 }
 
-@keyframes moveArrow {
-  0% {
-      left: 3px;
-  }
-  100% {
-      left: 7px;
-  }
-}
-
 .theme-menu__button:disabled::before {
   content: "▶";
   font-size: 14px;
@@ -299,112 +290,6 @@
   border-color: var(--text-color);
 }
 
-.like-icon .core {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.like-icon .main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.like-icon:hover .core {
-  fill: var(--heart-contour-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--heart-contour-color);
-  transition: fill 0.3s linear;
-  transition-delay: 0.05s;
-}
-
-.like-icon:not(:hover) .main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.like-icon:not(:hover) .core {
-  fill: transparent;
-  transition: fill 0.3s linear 0.03s;
-}
-
-.card__icon-button:active .core {
-  fill: red;
-  transition: fill 0.3s linear;
-}
-
-.card__icon-button:active .main-body {
-  fill: red;
-  transition: fill 0.3s linear 0.05s;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.like-icon {
-  margin: auto;
-}
-
-.like-icon.is-liked .core {
-  fill: red;
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .main-body {
-  fill: red;
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .contour {
-  fill: red;
-  transition: fill 0.3s linear 0.06s;
-}
-
-@keyframes scale-heart {
-  0% {
-      transform: scale(1);
-  }
-  50% {
-      transform: scale(1.15);
-  }
-  100% {
-      transform: scale(1);
-  }
-}
-
-@keyframes sparkle {
-  0% {
-      opacity: 0;
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0;
-  }
-}
-
-.like-icon.is-liked .heart {
-  animation: scale-heart 0.3s ease-in forwards;
-  animation-delay: 0.1s;
-  transform-origin: center;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparkle 0.3s ease-in forwards;
-  animation-delay: 0.3s;
-}
-
-.like-icon:not(.is-liked) .contour {
-  fill: var(--heart-contour-color);
-  transition: fill 0.1s linear;
-}
-
 
 .button-container {
   background-color: transparent;
@@ -423,7 +308,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 15px 20px 15px 20px;
+  padding: 13px 20px 15px 20px;
 }
 
 .floppy {
@@ -512,7 +397,9 @@
 
 .dialog-save-button {
   background-color: var(--bg-color);
-  max-inline-size: 293px;
+  max-inline-size: 310px;
+  padding-top: 7px;
+  padding-bottom: 8px;
 }
 
 .dialog .button__text {

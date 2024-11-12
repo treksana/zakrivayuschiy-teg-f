@@ -36,9 +36,9 @@
     );
 }
 
-.theme-dark .theme-menu__button:disabled::before {
+/*.theme-dark .theme-menu__button:disabled::before {
     display: none;
-}
+}*/
 
 :root.theme-light {
     --bg-color: #fff;
